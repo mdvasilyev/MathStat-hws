@@ -59,8 +59,29 @@
     \item \textbf{(1 балл)} Дана выборка $X_1, \ldots, X_n \sim $ \texttt{Bernoulli(p)}. Проверить несмещенность и состоятельность для следующих оценок:
     \begin{itemize}
         \item $X_1$ для параметра $p$
+        \start
+        \begin{eqnarray}
+            \mathbb{E}(X_1) = 1\cdot p + 0 \cdot (1-p) = p \\
+            \forall \varepsilon > 0 : P(|X_1 - p| < \varepsilon) = 0
+        \end{eqnarray}
+        Есть несмещенность, но нет состоятельности.
+        \finish
         \item $X_1X_2$ для параметра $p^2$
+        \start
+        \begin{eqnarray}
+            \mathbb{E}(X_1X_2) = \mathbb{E}(X_1) \cdot \mathbb{E}(X_2) = p^2 \\
+            \forall \varepsilon > 0 : P(|X_1X_2 - p^2| < \varepsilon) = 0
+        \end{eqnarray}
+        Есть несмещенность, но нет состоятельности.
+        \finish
         \item $X_1(1 - X_2)$ для параметра $p(1 - p)$
+        \start
+        \begin{eqnarray}
+            \mathbb{E}(X_1(1-X_2)) = \mathbb{E}(X_1) \cdot \mathbb{E}(1-X_2) = \mathbb{E}(X_1) \cdot (1-\mathbb{E}X_2) = p(1-p) \\
+            \forall \varepsilon > 0 : P(|X_1(1-X_2) - p(1-p)| < \varepsilon) = 0
+        \end{eqnarray}
+        Есть несмещенность, но нет состоятельности.
+        \finish
     \end{itemize}
 
     \item \textbf{(1 балл)} Дана выборка $X_1, \ldots, X_n \sim $ \texttt{U[0, a]}, $a > 1$. По ней построена эмпирическая функция распределения $F_n(t)$. Для какого параметра $\theta = \theta(a)$ статистика $F_n(1)$ является несмещенной оценкой? Является ли она состоятельной оценкой того же параметра?

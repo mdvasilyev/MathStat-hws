@@ -58,3 +58,9 @@
 
     \noindent\rule{\linewidth}{.6pt}
 }
+
+\usepackage{amsthm,amsmath,amsfonts,amssymb}
+\newcommand{\start}{\newline\textbf{Решение:}\newline}
+\newcommand{\finish}{\begin{flushright}
+    $\blacksquare$
+\end{flushright}}

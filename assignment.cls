@@ -37,7 +37,7 @@
     showstringspaces=false,
 }
 
-\newcommand{\assignmentTitle}[6]{
+\newcommand{\assignmentTitle}[5]{
     \begin{flushleft}
     Студент: #1\\
     Группа: #2
@@ -45,7 +45,6 @@
 
     \begin{flushright}\vspace{-15mm}
     \includegraphics[height=1.2cm]{#3}
-    \includegraphics[height=1cm]{#4}
     \end{flushright}
     
     % \begin{flushright}\vspace{-15mm}
@@ -53,8 +52,8 @@
     % \end{flushright}
     
     \begin{center}\vspace{-1.5cm}
-    \textbf{\large #5} \\
-    \textbf{#6}
+    \textbf{\large #4} \\
+    % \textbf{#5}
     \end{center}
 
     \noindent\rule{\linewidth}{.6pt}

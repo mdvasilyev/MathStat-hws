@@ -1,0 +1,68 @@
+\documentclass{assignment}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{qtree}
+% \usepackage{minted}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+\usepackage{booktabs,makecell}
+\usepackage{diagbox}
+
+\usepackage[unicode=true, colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref} 
+
+\begin{document}
+
+\assignmentTitle{Васильев М.Д. ИТМО}{M4140}{assets/mse_logo.png}{Домашнее задание 2}
+
+\section*{Теоритическая часть}
+\begin{enumerate}
+    \item \textbf{(1 балл)} $Y_1, \ldots, Y_n$ – выборка с распределением Парето:
+    $$
+    F(x) = 
+    \begin{cases}
+        1 - x^{-\alpha}, & x \geq 1\\
+        0, & x < 1
+    \end{cases}
+    $$
+
+    Оцените параметр $\alpha$ с помощью метода моментов. При всех ли значениях параметра $\alpha$ это возможно?
+
+    \item \textbf{(2 балла)} Пусть у нас есть выборка $X_1, \ldots, X_n, a \in \mathbb{R}, b \geq 0$
+
+        \begin{table}[!ht]
+        \centering
+        \caption{Распределение $X_n$}
+        \begin{tabular}{ c c c } 
+        \toprule
+        $X_n$ & \makecell{$e^{-an}$} & \makecell{$e^{an}$} \\ 
+        \midrule
+        $P$ &  $1 - e^{-bn}$ & $e^{-bn}$ \\
+        \bottomrule
+        \end{tabular}
+        \end{table}
+        При каких $a$ и $b$ $X_{n} \xrightarrow{P} 0$?
+
+    \item \textbf{(1 балл)} Имеется выборка $\displaystyle X_1, \ldots, X_n \sim \texttt{Geom}(p), p = \frac{1}{1+\theta}, \theta \geq 0$. Найдите оценку для $\theta$ методом моментов и докажите ее несмещенность.
+
+    \item \textbf{(2 балла)} Методом выборочных характеристик найдите оценку для параметра $k$ распределения $\chi^2(k)$. Докажите ее несмещенность и посчитайте дисперсию оценки.
+
+    
+\newpage
+
+\end{enumerate}
+
+\end{document}

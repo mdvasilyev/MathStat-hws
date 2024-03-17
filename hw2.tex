@@ -40,6 +40,29 @@
     $$
 
     Оцените параметр $\alpha$ с помощью метода моментов. При всех ли значениях параметра $\alpha$ это возможно?
+    \start
+    Найдем плотность распределения:
+    \begin{eqnarray}
+        &F(x) = 1 - x^{-\alpha} \\
+        &F(x) = 1 - (\frac{x_m}{x})^{k} \\ 
+        &x_m = 1 \\
+        &k = \alpha \\
+        &f(x) = \frac{k x_m^k}{x^{k+1}} = \frac{\alpha}{x^{\alpha+1}}
+    \end{eqnarray}
+    Найдем математическое ожидание
+    \begin{eqnarray}
+        \overline{Y} = \mathbb{E}Y_i = \int_{1}^{\infty} x \frac{\alpha}{x^{\alpha+1}} dx = \int_{1}^{\infty} \frac{\alpha}{x^{\alpha}} dx = \frac{\alpha}{1-\alpha} x^{1-a}|_1^\infty = \\
+        \frac{\alpha}{1-\alpha} (\infty^{1-a} - 1^{1-a}) = \frac{\alpha}{1-\alpha} (\infty^{1-a} - 1)
+    \end{eqnarray}
+    Сходится к $\frac{\alpha}{\alpha-1}$ при $1-\alpha<0$.
+    \begin{eqnarray}
+        &\frac{\alpha}{\alpha-1} = \overline{Y} \\
+        &\alpha = \alpha\overline{Y} - \overline{Y} \\
+        &\alpha(1-\overline{Y}) = -\overline{Y} \\
+        &\alpha = \frac{\overline{Y}}{(\overline{Y}-1)} \\
+        &\alpha > 1
+    \end{eqnarray}
+    \finish
 
     \item \textbf{(2 балла)} Пусть у нас есть выборка $X_1, \ldots, X_n, a \in \mathbb{R}, b \geq 0$
 

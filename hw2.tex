@@ -103,6 +103,25 @@
     \finish
 
     \item \textbf{(2 балла)} Методом выборочных характеристик найдите оценку для параметра $k$ распределения $\chi^2(k)$. Докажите ее несмещенность и посчитайте дисперсию оценки.
+    \start
+    \begin{equation}
+        X_1, \ldots, X_n \sim \chi^2(k),
+    \end{equation}
+    поэтому оценка для параметра $k$:
+    \begin{equation}
+        \hat{k} = \frac{1}{n}\sum_{i=1}^{n} X_i
+    \end{equation}
+    Проверим несмещеность:
+    \begin{align*}
+        &\mathbb{E}(\hat{k}) = \mathbb{E} (\frac{1}{n}\sum_{i=1}^{n} X_i) = \\
+        &\frac{1}{n}\sum_{i=1}^{n} \mathbb{E}(X_i) = \frac{1}{n}n k = k,
+    \end{align*}
+    поэтому оценка для $k$ несмещена. Посчитаем дисперсию:
+    \begin{align*}
+        &\text{Var}(\hat{k}) = \text{Var}(\frac{1}{n}\sum_{i=1}^{n} X_i) = \\
+        &\frac{1}{n^2}\sum_{i=1}^{n}\text{Var}(X_i) = \frac{1}{n^2}\cdot n\cdot 2k = \frac{2k}{n}
+    \end{align*}
+    \finish
 
     
 \newpage

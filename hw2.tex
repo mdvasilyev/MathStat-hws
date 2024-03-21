@@ -64,9 +64,10 @@
     \end{eqnarray}
     \finish
 
+    \newpage
     \item \textbf{(2 балла)} Пусть у нас есть выборка $X_1, \ldots, X_n, a \in \mathbb{R}, b \geq 0$
 
-        \begin{table}[!ht]
+        \begin{table}[h!]
         \centering
         \caption{Распределение $X_n$}
         \begin{tabular}{ c c c } 
@@ -80,6 +81,26 @@
         При каких $a$ и $b$ $X_{n} \xrightarrow{P} 0$?
 
     \item \textbf{(1 балл)} Имеется выборка $\displaystyle X_1, \ldots, X_n \sim \texttt{Geom}(p), p = \frac{1}{1+\theta}, \theta \geq 0$. Найдите оценку для $\theta$ методом моментов и докажите ее несмещенность.
+    \start
+    Момент первого порядка:
+    \begin{equation}
+        \mathbb{E}(X) = \frac{1}{p}
+    \end{equation}
+    Так как
+    \begin{equation}
+        p = \frac{1}{1+\theta},
+    \end{equation}
+    то
+    \begin{align*}
+        &\mathbb{E}(X) = \frac{1}{\frac{1}{1+\theta}} = 1 + \theta \\
+        &1 + \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} X_i \\
+        &\hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} X_i - 1 \\
+        &\mathbb{E}(\hat{\theta}) = \mathbb{E}(\frac{1}{n} \sum_{i=1}^{n} X_i - 1) \\
+        &\mathbb{E}(\frac{1}{n} \sum_{i=1}^{n} X_i - 1) = \frac{1}{n} \sum_{i=1}^{n} \mathbb{E}(X_i) - \mathbb{E}(1) = \\
+        &\frac{1}{n} \sum_{i=1}^{n} (1+\theta) - 1 = \frac{1}{n} n (1+\theta) - 1 = 1 + \theta - 1 = \theta \\
+    \end{align*}
+    Таким образом, оценка несмещена.
+    \finish
 
     \item \textbf{(2 балла)} Методом выборочных характеристик найдите оценку для параметра $k$ распределения $\chi^2(k)$. Докажите ее несмещенность и посчитайте дисперсию оценки.
 

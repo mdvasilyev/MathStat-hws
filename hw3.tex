@@ -44,6 +44,15 @@
         \end{align*}
         \finish
         \item $\displaystyle \frac{2t}{\theta^2},\quad \quad  t \in [0, \theta]$
+        \start
+        \begin{align*}
+            &L = \prod_{i=1}^{n} \frac{2t_i}{\theta^2} = \frac{2^n}{\theta^{2n}} \prod_{i=1}^{n} t_i \\
+            &\ln L = \ln (\frac{2^n}{\theta^{2n}} \prod_{i=1}^{n} t_i) = \ln \frac{2^n}{\theta^{2n}} + \ln (\prod_{i=1}^{n} t_i) = n \ln 2 - 2n \ln \theta + \sum_{i=1}^{n} \ln (t_i) \\
+            &0 = \frac{\partial}{\partial \theta}\ln L = \frac{\partial}{\partial \theta}(n\ln 2 - 2n \ln \theta + \sum_{i=1}^{n} \ln (t_i)) = -\frac{2n}{\theta} \\
+            &\frac{2n}{\hat{\theta}} = 0 \\
+            &\hat{\theta} = \max (t_i) = \theta
+        \end{align*}
+        \finish
         \item $\displaystyle \frac{\theta e^{\frac{-\theta^2}{2t}}}{\sqrt{2 \pi t^3}}, \quad t > 0$
         \item $\displaystyle \frac{\theta (\ln{t})^{\theta - 1}}{t}, \quad t \in [1, e]$
     \end{itemize}

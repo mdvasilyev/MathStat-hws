@@ -54,6 +54,17 @@
         \end{align*}
         \finish
         \item $\displaystyle \frac{\theta e^{\frac{-\theta^2}{2t}}}{\sqrt{2 \pi t^3}}, \quad t > 0$
+        \start
+        \begin{align*}
+            &L = \prod_{i=1}^{n} \frac{\theta e^{\frac{-\theta^2}{2t_i}}}{\sqrt{2 \pi t_i^3}} = \frac{\theta^n}{(\sqrt{2\pi})^n} \prod_{i=1}^{n} \frac{e^{\frac{-\theta^2}{2t_i}}}{\sqrt{t_i^3}} \\
+            &\ln L = \ln (\frac{\theta^n}{(\sqrt{2\pi})^n} \prod_{i=1}^{n} \frac{e^{\frac{-\theta^2}{2t_i}}}{\sqrt{t_i^3}}) = \ln \frac{\theta^n}{(\sqrt{2\pi})^n} + \ln (\prod_{i=1}^{n} \frac{e^{\frac{-\theta^2}{2t_i}}}{\sqrt{t_i^3}}) = n\ln\theta - n\ln\sqrt{2\pi} + \\
+            &+\sum_{i=1}^{n} \ln(\frac{e^{\frac{-\theta^2}{2t_i}}}{\sqrt{t_i^3}}) = n\ln\theta - n\ln\sqrt{2\pi} + \sum_{i=1}^{n} (\frac{-\theta^2}{2t_i} - \ln (\sqrt{t_i^3})) \\
+            &0 = \frac{\partial}{\partial \theta}\ln L = \frac{\partial}{\partial \theta}(n\ln\theta - n\ln\sqrt{2\pi} + \sum_{i=1}^{n} (\frac{-\theta^2}{2t_i} - \ln (\sqrt{t_i^3}))) = \frac{n}{\theta} -2\theta \sum_{i=1}^{n} (\frac{1}{2t_i}) \\
+            &\frac{n}{\hat{\theta}} -2\hat{\theta} \sum_{i=1}^{n} (\frac{1}{2t_i}) = 0 \\
+            &n -2\hat{\theta}^2 \sum_{i=1}^{n} (\frac{1}{2t_i}) = 0 \\
+            &\hat{\theta} = \sqrt{\frac{n}{2\sum_{i=1}^{n} (\frac{1}{2t_i})}}
+        \end{align*}
+        \finish
         \item $\displaystyle \frac{\theta (\ln{t})^{\theta - 1}}{t}, \quad t \in [1, e]$
     \end{itemize}
 

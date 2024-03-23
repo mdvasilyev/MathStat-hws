@@ -1,0 +1,52 @@
+\documentclass{assignment}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{qtree}
+% \usepackage{minted}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+\usepackage{booktabs,makecell}
+\usepackage{diagbox}
+
+\usepackage[unicode=true, colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref} 
+
+\begin{document}
+
+\assignmentTitle{Васильев М.Д. ИТМО}{M4140}{assets/mse_logo.png}{Домашнее задание 3}
+
+\section*{Теоритическая часть}
+\begin{enumerate}
+    \item \textbf{(2 балла)} Найти оценки методом максимального правдоподобия параметра $\theta > 0$, если распределение выборки имеет плотность:
+    \begin{itemize}
+        \item $\theta t^{\theta - 1}, \quad t \in [0, 1]$
+        \item $\displaystyle \frac{2t}{\theta^2},\quad \quad  t \in [0, \theta]$
+        \item $\displaystyle \frac{\theta e^{\frac{-\theta^2}{2t}}}{\sqrt{2 \pi t^3}}, \quad t > 0$
+        \item $\displaystyle \frac{\theta (\ln{t})^{\theta - 1}}{t}, \quad t \in [1, e]$
+    \end{itemize}
+
+    \item \textbf{(2 балла)} Пусть выборка $X_1, \ldots, X_n$ из  распределения Коши с параметром $\gamma$. 
+    Плотность задается следующим образом:
+    $$
+    p_{\gamma}(x) = \frac{1}{\pi \big(1 + (x - \gamma)^2\big)}
+    $$
+
+    Существует ли оценка методом максимального правдоподобия для параметра $\gamma$ в общем случае? Поясните.
+
+    Попробуйте найти оценку ММП по выборке из двух наблюдений: $X_1 = -2, X_2 = 2$.
+\end{enumerate}
+    
+\end{document}

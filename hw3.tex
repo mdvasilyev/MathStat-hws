@@ -87,6 +87,18 @@
     Существует ли оценка методом максимального правдоподобия для параметра $\gamma$ в общем случае? Поясните.
 
     Попробуйте найти оценку ММП по выборке из двух наблюдений: $X_1 = -2, X_2 = 2$.
+    \start
+    В общем случае оценки методом максимального правдободобия не существует, потому что у распределения Коши нет конечного математического ожидания и дисперсии, поэтому такая оценка можнт быть несостоятельной.
+
+    Попробуем найти оценку ММП для данной выборки:
+    \begin{align*}
+        &L = \prod_{i=1}^{2} \frac{1}{\pi \big(1 + (x_i - \gamma)^2\big)} = \frac{1}{\pi^2 \big(1 + (x_1 - \gamma)^2\big)\big(1 + (x_2 - \gamma)^2\big)} \\
+        &\ln L = \ln (\frac{1}{\pi^2 \big(1 + (x_1 - \gamma)^2\big)\big(1 + (x_2 - \gamma)^2\big)}) = - 2\ln\pi - \ln \big(1 + (x_1 - \gamma)^2\big) - \ln \big(1 + (x_2 - \gamma)^2\big) \\
+        &0 = \frac{\partial}{\partial \gamma} L = \frac{\partial}{\partial \gamma} (- 2\ln\pi - \ln \big(1 + (x_1 - \gamma)^2\big) - \ln \big(1 + (x_2 - \gamma)^2\big)) = \\
+        &\frac{2(x_1 - \gamma)}{1 + (x_1 - \gamma)^2} + \frac{2(x_2 - \gamma)}{1 + (x_2 - \gamma)^2} = \frac{2(-2 - \gamma)}{1 + (-2 - \gamma)^2} + \frac{2(2 - \gamma)}{1 + (2 - \gamma)^2} \\
+        &\underline{\hat{\gamma} = 0}
+    \end{align*}
+    \finish
 \end{enumerate}
     
 \end{document}

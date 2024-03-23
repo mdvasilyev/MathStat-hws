@@ -66,6 +66,16 @@
         \end{align*}
         \finish
         \item $\displaystyle \frac{\theta (\ln{t})^{\theta - 1}}{t}, \quad t \in [1, e]$
+        \start
+        \begin{align*}
+            &L = \prod_{i=1}^{n} \frac{\theta (\ln{t_i})^{\theta - 1}}{t_i} = \theta^n \prod_{i=1}^{n} \frac{(\ln{t_i})^{\theta - 1}}{t_i} \\
+            &\ln L = \ln (\theta^n \prod_{i=1}^{n} \frac{(\ln{t_i})^{\theta - 1}}{t_i}) = \ln \theta^n + \ln (\prod_{i=1}^{n} \frac{(\ln{t_i})^{\theta - 1}}{t_i}) = n\ln\theta + \sum_{i=1}^{n} \ln(\frac{(\ln{t_i})^{\theta - 1}}{t_i}) = \\
+            &n\ln\theta + \sum_{i=1}^{n} (\ln(\ln{t_i})^{\theta - 1} - \ln t_i) = n\ln\theta + \sum_{i=1}^{n} ((\theta - 1)\ln(\ln{t_i}) - \ln t_i) \\
+            &0 = \frac{\partial}{\partial \theta}\ln L = \frac{\partial}{\partial \theta}(n\ln\theta + \sum_{i=1}^{n} ((\theta - 1)\ln(\ln{t_i}) - \ln t_i)) = \frac{n}{\theta} + \sum_{i=1}^{n} \ln(\ln{t_i}) \\
+            &\frac{n}{\hat{\theta}} + \sum_{i=1}^{n} \ln(\ln{t_i}) = 0 \\
+            &\hat{\theta} = -\frac{n}{\sum_{i=1}^{n} \ln(\ln{t_i})}
+        \end{align*}
+        \finish
     \end{itemize}
 
     \item \textbf{(2 балла)} Пусть выборка $X_1, \ldots, X_n$ из  распределения Коши с параметром $\gamma$. 

@@ -33,6 +33,16 @@
     \item \textbf{(2 балла)} Найти оценки методом максимального правдоподобия параметра $\theta > 0$, если распределение выборки имеет плотность:
     \begin{itemize}
         \item $\theta t^{\theta - 1}, \quad t \in [0, 1]$
+        \start
+        \begin{align*}
+            &L = \prod_{i=1}^{n} \theta t_i^{\theta - 1} = \theta^n \prod_{i=1}^{n} t_i^{\theta - 1} \\
+            &\ln L = \ln (\theta^n \prod_{i=1}^{n} t_i^{\theta - 1}) = \ln \theta^n + \ln (\prod_{i=1}^{n} t_i^{\theta - 1}) = n \ln \theta + \sum_{i=1}^{n} \ln (t_i^{\theta - 1}) = \\
+            &n \ln \theta + (\theta - 1)\sum_{i=1}^{n} \ln (t_i) \\
+            &0 = \frac{\partial}{\partial \theta}\ln L = \frac{\partial}{\partial \theta}(n \ln \theta + (\theta - 1)\sum_{i=1}^{n} \ln (t_i)) = \frac{n}{\theta} + \sum_{i=1}^{n}\ln (t_i) \\
+            &\frac{n}{\hat{\theta}} = -\sum_{i=1}^{n}\ln (t_i) \\
+            & \hat{\theta} = - \frac{n}{\sum_{i=1}^{n}\ln (t_i)}
+        \end{align*}
+        \finish
         \item $\displaystyle \frac{2t}{\theta^2},\quad \quad  t \in [0, \theta]$
         \item $\displaystyle \frac{\theta e^{\frac{-\theta^2}{2t}}}{\sqrt{2 \pi t^3}}, \quad t > 0$
         \item $\displaystyle \frac{\theta (\ln{t})^{\theta - 1}}{t}, \quad t \in [1, e]$

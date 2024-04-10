@@ -1,0 +1,74 @@
+\documentclass{assignment}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{qtree}
+% \usepackage{minted}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+\usepackage{booktabs,makecell}
+\usepackage{diagbox}
+
+\usepackage[unicode=true, colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref} 
+
+\begin{document}
+
+\assignmentTitle{Васильев М.Д. ИТМО}{M4140}{assets/mse_logo.png}{Домашнее задание 4}
+
+
+\section*{Теоритическая часть}
+\begin{enumerate}
+    \item \textbf{(2 балла)} C помощью оценки $X_{[1]}$ (то есть центральная статистика должна как-то быть основана на $X_{[1]}$) построить точный доверительный интервал для параметра $\theta$ по выборке объема $n$ из:
+    \begin{itemize}
+        \item Равномерного распределения на отрезке $[\theta, \theta + 1]$
+        \item Равномерного распределения на отрезке $[\theta, 2\theta]$       
+    \end{itemize}
+
+    \item \textbf{(1 балл)} Пусть выборка $X_1, \ldots, X_n \sim N(\theta, \theta^2), \theta > 0$. Постройте точный доверительный интервал для параметра $\theta$ уровня доверия $1 - \varepsilon$.
+
+    \item \textbf{(1 балл)} В результате проверки 400 электрических лампочек 40 штук оказалось бракованными. Найти доверительный интервал уровня 0.99 для вероятности брака.
+
+    \item \textbf{(1 балл)} В Петроградском районе все жители имеют доход не менее 500 тысяч рублей в месяц. Выборочное обследование доходов 200 человек дало средний доход 590 тысяч рублей. В предположении, что случайная величина дохода имеет распределение Парето вида 
+    $$F(x)=
+    \begin{cases}
+        \displaystyle 1 - \frac{x}{x_0}^{-\beta} &, x \geq x_0 \\
+        0 &, \texttt{otherwise} 
+    \end{cases}    
+    $$
+
+    где $x_0 = 500$ тысяч рублей, построить доверительный интервал для парамтера $\beta$ с надежностью $90\%$.
+\end{enumerate}
+
+\newpage
+\section*{Практическая часть}
+
+\begin{enumerate}
+    \item \textbf{(3 балла)} Данное задание выполняется по вариантам. Свой номер вы можете увидеть в табличке с баллами. Список заданий доступен по \href{https://drive.google.com/file/d/1AUE3md4TKo0PjZY9W2LFU3uLOUjxeQqI}{ссылке}.
+
+    \textit{Замечание: стоит выполнять толькой свое задание, за него будут ставиться баллы. Однако если интересно – можете посмотреть и другие.}
+
+    \textbf{Требования:}
+    \begin{itemize}
+        \item Для сдачи домашнего задания используйте \texttt{Google Colab/Github}. \textit{Ожидается, что ноутбук будет выложен на \texttt{Github/Colab} (не файл \texttt{.ipynb}, присланный куда-либо)}.
+         \item Для данного домашнего задания можно использовать языки программирования \texttt{R, Python}.
+         \item Задания необходимо выполнять в \texttt{RMarkdown} либо \texttt{Jupyter Notebook} \textit{с комментариями и пояснениями}.
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+\end{document}

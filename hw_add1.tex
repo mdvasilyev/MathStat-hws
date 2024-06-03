@@ -55,6 +55,22 @@
     \finish
 
     \item \textbf{(1 балл)} Пусть выборка $X_1, \ldots, X_n \sim \texttt{Weibull}$ с функцией распределения $F(x) = 1 - e^{-\lambda x^2}, x \geq 0, \lambda > 0$. Найдите оценку параметра $\lambda$ методом максимального правдоподобия.
+    \start
+    Определим плотность вероятности:
+    \begin{equation}
+        f(x) = \frac{d}{dx}F(x) = \frac{d}{dx}(1 - e^{-\lambda x^2}) = 2 x \lambda e^{-\lambda x^2}
+    \end{equation}
+    Функция правдоподобия:
+    \begin{align*}
+        &L(\lambda) = \prod_{i=1}^{n}f(X_i) = \prod_{i=1}^{n}2 X_i \lambda e^{-\lambda X_i^2} \\
+        &\ln L(\lambda) = \ln (\prod_{i=1}^{n}2 X_i \lambda e^{-\lambda X_i^2}) = \sum_{i=1}^{n} \ln (2 X_i \lambda e^{-\lambda X_i^2}) = \sum_{i=1}^{n} (\ln 2 + \ln X_i  + \ln \lambda + \ln e^{-\lambda X_i^2}) = \\
+        &n\ln 2 + \sum_{i=1}^{n}\ln X_i  + n\ln \lambda + \sum_{i=1}^{n}(-\lambda X_i^2) \\
+        &\frac{d}{d\lambda}\ln L(\lambda) = \frac{d}{d\lambda} (n\ln 2 + \sum_{i=1}^{n}\ln X_i  + n\ln \lambda + \sum_{i=1}^{n}\ln e^{-\lambda X_i^2}) = \frac{n}{\lambda} - \sum_{i=1}^{n} X_i^2 \\
+        &\frac{d}{d\lambda}\ln L(\lambda) = 0 \Leftrightarrow \frac{n}{\lambda} - \sum_{i=1}^{n} X_i^2 = 0 \Rightarrow \hat{\lambda} = \frac{n}{\sum_{i=1}^{n} X_i^2}
+    \end{align*}
+    
+    \textbf{Ответ}: $\hat{\lambda} = \frac{n}{\sum_{i=1}^{n} X_i^2}$.
+    \finish
 
     \item \textbf{(1 балл)} Для отрасли, включающей 1200 фирм, составлена случайная выборка из 19 фирм. По выборке оказалось, что в фирме в среднем работают 77.5 человека при выборочном среднем квадратическом отклонении 25 человек. Пользуясь 95\%-ным доверительным интервалом, оцените среднее число работающих в фирме по всей отрасли и общее число работающих в отрасли. Предполагается, что случайное число работников фирмы описывается нормальным распределением.
 

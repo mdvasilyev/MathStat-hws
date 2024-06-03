@@ -281,6 +281,41 @@
 
 
     \item \textbf{(2 балла)} Пусть случайная величина имеет распределение Пуассона с параметром $\lambda$. Требуется на уровне значимости $\alpha$ проверить нулевую гипотезу $H_0:~ \lambda = \lambda_0$, если альтернативная гипотеза $H_1:~ \lambda = \lambda_1 > \lambda_0$. Построить критерий отношения правдоподобия используя нормальное приближение. Вычислить объем выборки $N$, необходимый для достижения заданных ошибок первого и второго рода $\alpha$ и $\beta$.
+    \start
+    Функция правдоподобия:
+    \begin{align*}
+        &L(\lambda) = \prod_{i=1}^{N} \frac{\lambda^{X_i}e^{-\lambda}}{X_i!} \\
+        &\ln L(\lambda) = \ln (\prod_{i=1}^{N} \frac{\lambda^{X_i}e^{-\lambda}}{X_i!}) = \sum_{i=1}^{N} \ln\frac{\lambda^{X_i}e^{-\lambda}}{X_i!} = \\
+        &\sum_{i=1}^{N} (\ln\lambda^{X_i} + \ln e^{-\lambda} - \ln X_i!) = \sum_{i=1}^{N} (X_i\ln\lambda -\lambda - \ln X_i!) = \\
+        &\ln\lambda\sum_{i=1}^{N} X_i - N\lambda - \sum_{i=1}^{N}\ln X_i!
+    \end{align*}
+    Критерий отношения правдободобия:
+    \begin{align*}
+        &\Lambda = 2(\ln L(\lambda_1) - \ln L(\lambda_0)) = \\
+        &2(\ln\lambda_1\sum_{i=1}^{N} X_i - N\lambda_1 - \sum_{i=1}^{N}\ln X_i! - \ln\lambda_2\sum_{i=1}^{N} X_i + N\lambda_2 + \sum_{i=1}^{N}\ln X_i!) = \\
+        &2((\ln\lambda_1 - \ln\lambda_1)\sum_{i=1}^{N} X_i - N(\lambda_1 - \lambda_2))
+    \end{align*}
+    При больших $N$ выборочное среднее $\bar{X}$ распределено нормально:
+    \begin{align*}
+        &\bar{X} \sim N(\lambda, \frac{\lambda}{N}) \\
+        &Z = \frac{\bar{X} - \lambda_0}{\sqrt{\frac{\lambda_0}{N}}} \sim N(0, 1)
+    \end{align*}
+    Для уровня значимости $\alpha$, критическое значение $z_{\alpha}$ определяется из стандартного нормального распределения:
+    \begin{equation}
+        P(Z > z_{\alpha}) = \alpha
+    \end{equation}
+    Ошибка второго рода возникает, если мы принимаем $H_0$, когда истинное значение $\lambda = \lambda_1$:
+    \begin{align*}
+        &\beta = P(Z \leq z_{\alpha}|\lambda = \lambda_1) \\
+        &Z = \frac{\bar{X} - \lambda_1}{\sqrt{\frac{\lambda_1}{N}}} \\
+        &\beta = P(\frac{\bar{X} - \lambda_1}{\sqrt{\frac{\lambda_1}{N}}} \leq \frac{\lambda_0 + z_{\alpha}\sqrt{\frac{\lambda_0}{N}}-\lambda_1}{\sqrt{\frac{\lambda_1}{N}}}) \\
+        &z_{\beta} = \frac{\lambda_0 + z_{\alpha}\sqrt{\frac{\lambda_0}{N}}-\lambda_1}{\sqrt{\frac{\lambda_1}{N}}} \\
+        &z_{\beta}\sqrt{\frac{\lambda_1}{N}} = \lambda_0 + z_{\alpha}\sqrt{\frac{\lambda_0}{N}}-\lambda_1 \\
+        &\frac{1}{\sqrt{N}}(z_{\beta}\sqrt{\lambda_1} - z_{\alpha}\sqrt{\lambda_0}) = \lambda_0 - \lambda_1 \\
+        &N = \left(\frac{z_{\beta}\sqrt{\lambda_1} - z_{\alpha}\sqrt{\lambda_0}}{\lambda_0 - \lambda_1}\right)^2
+    \end{align*}
+    \textbf{Ответ}: критерий отношения правдоподобия $\Lambda = 2((\ln\lambda_1 - \ln\lambda_1)\sum_{i=1}^{N} X_i - N(\lambda_1 - \lambda_2))$; объем выборки $N = \left(\frac{z_{\beta}\sqrt{\lambda_1} - z_{\alpha}\sqrt{\lambda_0}}{\lambda_0 - \lambda_1}\right)^2$.
+    \finish
 
     \item \textbf{(2 балла)} Проверяется нулевая гипотеза о том, что случайная величина равномерно распределена на отрезке $[-1, 1]$ против гипотзеы, что она имеет нормальное распределение $\mathcal{N}(0, \sigma^2)$. Построить критерий отношения правдоподобия в общем виде и в частном случае при $\displaystyle n = 2, \alpha < \frac{\pi}{4}$.
     

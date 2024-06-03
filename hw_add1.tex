@@ -192,7 +192,78 @@
         \item $N = 45, M = 15$
         \item $N = 40, M = 8$
     \end{itemize}
-
+    \textcolor{white}{.}
+    \start
+    Так как затрачиваемое время состоит из постоянного периода и случайной задержки, распределенной показательно, то можно записать следующую формулу:
+    \begin{equation}
+        T = C + X_{exp}.
+    \end{equation}
+    Поэтому функции плотности вероятности можно записать
+    \begin{equation}
+        \begin{cases}
+            f(t) = \lambda e^{-\lambda (t - C)}, &t \geq C \\
+            f(t) = 0, &t < C
+        \end{cases}
+    \end{equation}
+    Параметры $C, \lambda$ можно определить на основе $N, M$.
+    \begin{align*}
+        &\mathbb{E}(T) = N \\
+        &\mathbb{E}(T) = C + \frac{1}{\lambda} \\
+        &N = C + \frac{1}{\lambda} \\
+        &Var(T) = M^2 \\
+        &Var(T) = \frac{1}{\lambda^2} \\
+        &M = \frac{1}{\lambda} \\
+        &\begin{cases}
+            \lambda = \frac{1}{M} \\
+            C = N - M
+        \end{cases}
+    \end{align*}
+    Вероятность того, что задачи будут решены за определенное время t:
+    \begin{align*}
+        &P(T\leq t)=P(C+X \leq t)=P(X\leq t - C) \\
+        &P(X\leq x)=1 - e^{-\lambda x} \\
+        &P(T\leq t)=1 - e^{-\lambda (t-C)} \\
+    \end{align*}
+    Время, за которое задачи будут выполнены на $95\%$:
+    \begin{align*}
+        &P(T\leq t')=0.95 \\
+        &P(X\leq t' - C) = 1 - e^{-\lambda (t'-C)} = 0.95 \\
+        &e^{-\lambda (t'-C)} = 0.05 \\
+        &-\lambda (t'-C) = \ln 0.05 \\
+        &t'-C = -\frac{\ln 0.05}{\lambda} \\
+        &t' = -\frac{\ln 0.05}{\lambda} + C
+    \end{align*}
+    Итого:
+    \begin{equation}
+        \begin{cases}
+            \lambda = \frac{1}{M} \\
+            C = N - M \\
+            P(T\leq t)=1 - e^{-\lambda (t-C)} \\
+            t' = -\frac{\ln 0.05}{\lambda} + C
+        \end{cases}
+    \end{equation}
+    Для $N = 45, M = 15$:
+    \begin{equation}
+        \begin{cases}
+            \lambda = \frac{1}{M} = \frac{1}{15}\\
+            C = N - M = 45 - 15 = 30\\
+            t = 60 \quad (\text{из условия}) \\
+            P(T\leq 60)=1 - e^{-\lambda (60-C)} = 1 - e^{-\frac{1}{15} (60-30)} \approx 0.865 \\
+            t' = -\frac{\ln 0.05}{\lambda} + C = -\frac{\ln 0.05}{\frac{1}{15}} + 30 \approx 75
+        \end{cases}
+    \end{equation}
+    Для $N = 40, M = 8$:
+    \begin{equation}
+        \begin{cases}
+            \lambda = \frac{1}{M} = \frac{1}{8}\\
+            C = N - M = 40 - 8 = 32\\
+            t = 60 \quad (\text{из условия}) \\
+            P(T\leq 60)=1 - e^{-\lambda (60-C)} = 1 - e^{-\frac{1}{8} (60-32)} \approx 0.969 \\
+            t' = -\frac{\ln 0.05}{\lambda} + C = -\frac{\ln 0.05}{\frac{1}{8}} + 32 \approx 56
+        \end{cases}
+    \end{equation}
+    \textbf{Ответ}: для $N = 45, M = 15$ вероятность того, что все задачи будут решены за час составляет 0.865, а время за которое задачи будут выполнены на $95\%$ составляет 75 минут; для $N = 40, M = 8$ вероятность того, что все задачи будут решены за час составляет 0.969, а время за которое задачи будут выполнены на $95\%$ составляет 56 минут.
+    \finish
 
     \item \textbf{(1 балл)} Построить асимптотический доверительный интервал для параметра $p$ с известным числом испытаний $N$ для биномиального распределения.
 

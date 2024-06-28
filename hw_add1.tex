@@ -207,9 +207,32 @@
     \textbf{Ответ}: оценка эффективная.
     \finish
     
-    % \item[8.] \textbf{(1 балл)} Доказать, что для биномиального распределения оценка $\displaystyle \hat{p} = \frac{\bar{X}}{N}$ является эффективной оценкой вероятности $p$.
+    \item[8.] \textbf{(1 балл)} Доказать, что для биномиального распределения оценка $\displaystyle \hat{p} = \frac{\bar{X}}{N}$ является эффективной оценкой вероятности $p$.
 
-    % $$P(\xi_{binom} = k) = \binom{N}{k} p^{k}(1 - p)^{N - k}$$
+    $$P(\xi_{binom} = k) = \binom{N}{k} p^{k}(1 - p)^{N - k}$$
+    \newline
+    \start
+    Оценка $\hat{p} = \frac{\bar{X}}{N}$ несмещена:
+    \begin{equation}
+        \mathbb{E}\hat{p} = \frac{1}{N}\mathbb{E}\bar{X} = \frac{1}{N}N\cdot p = p
+    \end{equation}
+    Дисперсия:
+    \begin{equation}
+        \mathbb{D}\hat{p} = \frac{1}{N^2}\mathbb{D}\hat{X} = \frac{1}{(n\cdot N)^2}\sum_{i=1}^{n}\mathbb{D}X_1 = \frac{n\cdot N\cdot p(1-p)}{(n\cdot N)^2} = \frac{p(1-p)}{n\cdot N}
+    \end{equation}
+    Величина информации Фишера:
+    \begin{align*}
+        &\mathbb{I}(\hat{p}) = \mathbb{E}_x(\frac{\partial \ln \binom{N}{k}p^x (1-p)^{N-x}}{\partial p})^2 = \mathbb{E}_x(\frac{x-Np}{p(1-p)})^2 = \\
+        &\frac{(Np)^2+\mathbb{E}_xx^2-2Np\mathbb{E}_xx}{(p(1-p))^2} = \frac{N}{p(1-p)}
+    \end{align*}
+    Поэтому
+    \begin{equation}
+        e(\hat{p}) = \frac{1}{n\mathbb{I}(\hat{p})\mathbb{D}\hat{p}} = 1
+    \end{equation}
+    поэтому
+
+    \textbf{Ответ}: оценка эффективная.
+    \finish
 
     % \item[9.] \textbf{(1 балл)} Доказать, что эмпирическая функция распределения $F_n(x)$ является эффективной оценкой теоретической функции распределения $F(x)$ при каждом $x$.
 

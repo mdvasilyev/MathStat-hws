@@ -180,9 +180,32 @@
     \textbf{Ответ}: недостаточно оснований полагать, что частота попадания в ДТП зависит от возраста.
     \finish
 
-    % \item[7.] \textbf{(1 балл)} Доказать, что для геометрического распределения с параметром $\displaystyle p = \frac{1}{\gamma}, \gamma > 1$, выборочное среднее является эффективной оценкой параметра $\gamma$.
+    \item[7.] \textbf{(1 балл)} Доказать, что для геометрического распределения с параметром $\displaystyle p = \frac{1}{\gamma}, \gamma > 1$, выборочное среднее является эффективной оценкой параметра $\gamma$.
 
-    % $$P(\xi_{geom} = k) = p(1 - p)^{k - 1}$$
+    $$P(\xi_{geom} = k) = p(1 - p)^{k - 1}$$
+    \newline
+    \start
+    Оценка $\hat{\gamma} = \bar{X}$ несмещена:
+    \begin{equation}
+        \mathbb{E}\hat{\gamma} = \frac{1}{n}\sum_{i=1}^{n}\mathbb{E}X_i = \mathbb{E}X_i = \frac{1}{p} = \gamma
+    \end{equation}
+    Дисперсия:
+    \begin{equation}
+        \mathbb{D}\hat{\gamma} = \frac{1}{n^2}\sum_{i=1}^{n}\mathbb{D}X_i = \frac{\mathbb{D}X_i}{n} = \frac{1-p}{np^2} = \frac{\gamma(\gamma-1)}{n}
+    \end{equation}
+    Величина информации Фишера:
+    \begin{align*}
+        &\mathbb{I}(\hat{\gamma}) = \mathbb{E}_x(\frac{\partial \ln \frac{1}{\gamma}\cdot(1-\frac{1}{\gamma})^{x-1}}{\partial\gamma})^2 = \mathbb{E}_x(\frac{\gamma-x}{\gamma-\gamma^2})^2 = \\
+        &\frac{\gamma^2-2\gamma\mathbb{E}_xx+\mathbb{E}_xx^2}{(\gamma-\gamma^2)^2} = \frac{1}{\gamma^2-\gamma}
+    \end{align*}
+    Поэтому
+    \begin{equation}
+        e(\gamma) = \frac{1}{n\mathbb{I}(\gamma)\mathbb{D}\gamma} = 1
+    \end{equation}
+    поэтому
+
+    \textbf{Ответ}: оценка эффективная.
+    \finish
     
     % \item[8.] \textbf{(1 балл)} Доказать, что для биномиального распределения оценка $\displaystyle \hat{p} = \frac{\bar{X}}{N}$ является эффективной оценкой вероятности $p$.
 

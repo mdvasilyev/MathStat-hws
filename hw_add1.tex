@@ -29,37 +29,44 @@
 \assignmentTitle{Васильев М.Д. ИТМО}{M4140}{assets/mse_logo.png}{Дополнительне задачи 1}
 
 \begin{enumerate}
-    % \item[1.] \textbf{(1 балл)}  При нейтронной бомбардировке ядер урана начинается расщепление ядра, при котором ядро урана распадается на две части различного типа; в камере Вильсона это явление обнаруживается в виде двух траекторий, исходящих из одной точки. Эти траектории вскоре разделяются на несколько ветвей, получающихся от столкновения частиц с молекулами газа в камере. Можно показать, что число ветвей в одной траектории имеет так называемое «двойное» распределение Пуассона:
+    \item[1.] \textbf{(1 балл)}  При нейтронной бомбардировке ядер урана начинается расщепление ядра, при котором ядро урана распадается на две части различного типа; в камере Вильсона это явление обнаруживается в виде двух траекторий, исходящих из одной точки. Эти траектории вскоре разделяются на несколько ветвей, получающихся от столкновения частиц с молекулами газа в камере. Можно показать, что число ветвей в одной траектории имеет так называемое «двойное» распределение Пуассона:
 
-    % $$P(X = k) = \frac{1}{2}\Big(\frac{\lambda_1^k}{k!}e^{-\lambda_1} + \frac{\lambda_2^k}{k!}e^{-\lambda_2} \Big), k > 0, 1, \ldots,$$
+    $$P(X = k) = \frac{1}{2}\Big(\frac{\lambda_1^k}{k!}e^{-\lambda_1} + \frac{\lambda_2^k}{k!}e^{-\lambda_2} \Big), k > 0, 1, \ldots,$$
 
-    % где $\lambda_1 < \lambda_2$ некоторые положительные постоянные. Используя методов моментов, построить векторную оценку параметра $(\lambda_1, \lambda_2)$.
-    % \start
-    % Математическое ожидание:
-    % \begin{align*}
-    %     &\mathbb{E}(X) = \sum_{k=0}^{\infty} k \cdot P(X = k) \\
-    %     &P(X = k) = \frac{1}{2}\Big(\frac{\lambda_1^k}{k!}e^{-\lambda_1} + \frac{\lambda_2^k}{k!}e^{-\lambda_2} \Big) \Rightarrow \\
-    %     &\mathbb{E}(X) = \frac{1}{2}\Big(\sum_{k=0}^{\infty} k \cdot\frac{\lambda_1^k}{k!}e^{-\lambda_1} + \sum_{k=0}^{\infty} k \cdot\frac{\lambda_2^k}{k!}e^{-\lambda_2} \Big) = \frac{1}{2} (\lambda_1 + \lambda_2) = \bar{X} \\
-    %     &\mathbb{E}(X^2) = \frac{1}{2}\Big(\mathbb{E}(X_{\lambda_1}^2) + \mathbb{E}(X_{\lambda_1}^2) \Big) = \frac{1}{2} (\lambda_1 + \lambda_1^2 + \lambda_2 + \lambda_2^2) = \bar{X^2}
-    % \end{align*}
-    % Запишем систему:
-    % \begin{align*}
-    %     &\begin{cases}
-    %         \frac{1}{2} (\lambda_1 + \lambda_2) = \bar{X} \\
-    %         \frac{1}{2} (\lambda_1 + \lambda_1^2 + \lambda_2 + \lambda_2^2) = \bar{X^2}
-    %     \end{cases} \\
-    %     &\begin{cases}
-    %         \lambda_1 = 2\bar{X} - \lambda_2 \\
-    %         2\bar{X} - \lambda_2 + (2\bar{X} - \lambda_2)^2 + \lambda_2 + \lambda_2^2 = 2\bar{X^2}
-    %     \end{cases} \\
-    %     &\begin{cases}
-    %         \lambda_1 = 2\bar{X} - \lambda_2 \\
-    %         2\bar{X^2} - 2\bar{X}\lambda_2 + \lambda_2^2 = 0
-    %     \end{cases} \\
-    %     &2\bar{X^2} - 2\bar{X}\lambda_2 + \lambda_2^2 = 0 \\
-    %     &\lambda_2 = \frac{2\bar{X} \pm \sqrt{4\bar{X^2} - 8\bar{X^2}}}{2}
-    % \end{align*}
-    % \finish
+    где $\lambda_1 < \lambda_2$ некоторые положительные постоянные. Используя методов моментов, построить векторную оценку параметра $(\lambda_1, \lambda_2)$.
+    \start
+    Математическое ожидание:
+    \begin{align*}
+        &\mathbb{E}(X) = \sum_{k=0}^{\infty} k \cdot P(X = k) \\
+        &P(X = k) = \frac{1}{2}\Big(\frac{\lambda_1^k}{k!}e^{-\lambda_1} + \frac{\lambda_2^k}{k!}e^{-\lambda_2} \Big) \Rightarrow \\
+        &\mathbb{E}(X) = \frac{1}{2}\Big(\sum_{k=0}^{\infty} k \cdot\frac{\lambda_1^k}{k!}e^{-\lambda_1} + \sum_{k=0}^{\infty} k \cdot\frac{\lambda_2^k}{k!}e^{-\lambda_2} \Big) = \frac{1}{2} (\lambda_1 + \lambda_2) = \bar{X} \\
+        &\mathbb{E}(X^2) = \frac{1}{2}\Big(\mathbb{E}(X_{\lambda_1}^2) + \mathbb{E}(X_{\lambda_1}^2) \Big) = \frac{1}{2} (\lambda_1 + \lambda_1^2 + \lambda_2 + \lambda_2^2) = \bar{X^2}
+    \end{align*}
+    Запишем систему:
+    \begin{align*}
+        &\begin{cases}
+            \frac{1}{2} (\lambda_1 + \lambda_2) = \bar{X} \\
+            \frac{1}{2} (\lambda_1 + \lambda_1^2 + \lambda_2 + \lambda_2^2) = \bar{X^2}
+        \end{cases} \\
+        &\begin{cases}
+            \lambda_2 = 2\bar{X} - \lambda_1 \\
+            \lambda_1 + \lambda_1^2 + 2\bar{X} - \lambda_1 + (2\bar{X} - \lambda_1)^2 = 2\bar{X}^2
+        \end{cases} \\
+        &\begin{cases}
+            \lambda_2 = 2\bar{X} - \lambda_1 \\
+            \lambda_1^2 - 2\bar{X}\lambda_1 + 2(\bar{X})^2 - \bar{X^2} + \bar{X} = 0
+        \end{cases} \\
+        &\begin{cases}
+            \lambda_2 = 2\bar{X} - \lambda_1 \\
+            \lambda_1 = \bar{X} \pm \sqrt{\bar{X^2}-(\bar{X})^2-\bar{X}}
+        \end{cases} \\
+        &\begin{cases}
+            \lambda_1 = \bar{X} - \sqrt{\bar{X^2}-(\bar{X})^2-\bar{X}} \quad \text{т.к. } \lambda_1 < \lambda_2\\
+            \lambda_2 = \bar{X} + \sqrt{\bar{X^2}-(\bar{X})^2-\bar{X}}
+        \end{cases}
+    \end{align*}
+    \textbf{Ответ}: $\lambda_1 = \bar{X} - \sqrt{\bar{X^2}-(\bar{X})^2-\bar{X}}, \qquad \lambda_2 = \bar{X} + \sqrt{\bar{X^2}-(\bar{X})^2-\bar{X}}$.
+    \finish
     
     \item[2.] \textbf{(1 балл)} Определить границы значений коэффициента эксцесса. Обосновать ответ.
     \start
